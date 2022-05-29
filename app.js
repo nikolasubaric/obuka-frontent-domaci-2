@@ -1,3 +1,5 @@
+const output = document.getElementById('dataOutput');
+console.log(output);
 const movies = [
   {
     wasSeen: false,
@@ -17,7 +19,7 @@ const movies = [
     wasSeen: false,
     name: 'The Chipmunks 5: Escape from Alcatraz',
     year: 2021,
-    country: 'United States of America',
+    country: 'Canary Islands',
     notice: 'Contains nudity, drug use, gambling',
     actors: [
       'Anna Gunn',
@@ -31,8 +33,31 @@ const movies = [
     wasSeen: false,
     name: 'Truckmonster 5: Revved Up!',
     year: 2004,
-    country: 'United States of America',
+    country: 'Tunisia',
     notice: 'Cointains graphic scenes, drug use, gambling',
     actors: ['Owen Wilson', 'Paul Newman', 'George Carlin', 'Justin Long'],
   },
 ];
+
+// VALIDACIJA FILMA PRIJE PRIKAZIVANJA
+
+const populateTable = () => {
+  let markup = ``;
+
+  movies.forEach(movie => {
+    markup += `
+           <tr class='${movie.wasSeen ? 'watched' : 'notWatched'}'>
+            <td><input type='checkbox' ${movie.wasSeen && 'checked'} /></td>
+            <td>${movie.name}</td>
+            <td>${movie.year}</td>
+            <td>${movie.country || ''}</td>
+            <td>${movie.notice || ''}</td>
+            <td>${movie.actors.join(', ')}</td>
+          </tr>
+    `;
+  });
+
+  output.innerHTML = markup;
+};
+
+populateTable();

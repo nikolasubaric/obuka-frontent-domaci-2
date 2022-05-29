@@ -1,0 +1,12 @@
+:root {
+  --has-seen-movie: #d1e7dd;
+  --hasnt-seen-movie: #f8d7da;
+}
+
+.watched {
+  background-color: var(--has-seen-movie);
+}
+
+.notWatched {
+  background-color: var(--hasnt-seen-movie);
+}
