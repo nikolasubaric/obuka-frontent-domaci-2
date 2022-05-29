@@ -1,12 +1,32 @@
+*,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(158, 152, 152);
+}
+
 :root {
   --has-seen-movie: #d1e7dd;
   --hasnt-seen-movie: #f8d7da;
 }
 
+th,
+td {
+  margin: auto;
+  text-align: center;
+}
+
 .watched {
-  background-color: var(--has-seen-movie);
+  background-color: var(--has-seen-movie) !important;
 }
 
 .notWatched {
-  background-color: var(--hasnt-seen-movie);
+  background-color: var(--hasnt-seen-movie) !important;
+}
+
+.mt-7 {
+  margin-top: 70px;
 }
